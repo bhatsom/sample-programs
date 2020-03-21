@@ -12,11 +12,6 @@ import java.util.stream.Stream;
 
 public class NameScoreCalculator {
 
-	// Assumptions:
-	// 1) name scoring is case in-sensitive. Both 'A' and 'a' are scored as 1
-	// 2)
-
-
 	public static void main(String[] args) {
 
 		if (args.length <1) {
@@ -41,8 +36,6 @@ public class NameScoreCalculator {
 
 		// map each first name to a Name domain model
 		List<Name> names = convertTextsToNames(namesArray);
-		//System.out.println("names:" + names);
-
 
 		// finally, use the calculator to calculate total score
 		return sortAndCalcScoreForNameList(names, scoringAlgo);
