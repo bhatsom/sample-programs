@@ -8,8 +8,6 @@ import com.opencsv.CSVReaderBuilder;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.Reader;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 public class FileReaderUtil {
 
@@ -21,9 +19,7 @@ public class FileReaderUtil {
 	 * @throws Exception
 	 */
 	public static String[] readSingleCommaSeparatedLine(String fileName, int lineNumber, boolean skipHeader) throws Exception {
-		//Reader reader = new BufferedReader(new FileReader(fileName));
-
-		Reader reader = Files.newBufferedReader(Paths.get(ClassLoader.getSystemResource(fileName).toURI()));
+		Reader reader = new BufferedReader(new FileReader(fileName));
 
 		CSVParser csvParser = new CSVParserBuilder()
 				.withSeparator(',')
